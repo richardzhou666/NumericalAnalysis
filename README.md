@@ -1,5 +1,6 @@
-# NumericalAnalysis
-This project implements a number of famous numerical methods in python.
+# Numerical Analysis in python
+This project implements a number of famous numerical methods with visualization and error analysis in python.
+
 * ivp.py
 Numerical methods for solving first-order Initial Value Problems, including linear one step methods and Linear Multi-step Methods (LMM).
 	* Runge Kutta Method
@@ -14,7 +15,6 @@ Numerical methods for solving second-order Initial Value Problems in matrix form
 
 * heat.py
 Numerical methods for solving classic one-dimensional heat equation with Dirichlet Boundary Conditions:
-
 	* Forward Euler
 	* Backward Euler
 	* Crank Nicolson
