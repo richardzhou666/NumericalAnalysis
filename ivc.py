@@ -98,3 +98,42 @@ def rk4():
         k4 = h * f(t_list[i - 1] + h, w[i - 1] + k3)
         w[i] = w[i - 1] + (k1 + 2 * k2 + 2 * k3 + k4) / 6
     return w
+
+def AdamsBash2():
+  w2 = np.zeros(n+1)
+  w2[0] = w[0]
+  w2[1] = w[1]
+  for i in range(2, n+1):
+    w2[i] = w2[i-1]+h/2*(3*f(t[i-1], w2[i-1])-f(t[i-2], w2[i-2]))
+  return w2
+
+def AdamsBash3():
+  w3 = np.zeros(n+1)
+  w3[0] = w[0]
+  w3[1] = w[1]
+  w3[2] = w[2]
+  for i in range(3, n+1):
+    w3[i] = w3[i-1] + h/12*(23*f(t[i-1], w3[i-1])- 16*f(t[i-2], w3[i-2])+5*f(t[i-3], w3[i-3]))
+  return w3
+
+def AdamsBash4():
+  w4 = np.zeros(n+1)
+  w4[0] = w[0]
+  w4[1] = w[1]
+  w4[2] = w[2]
+  w4[3] = w[3]
+  for i in range(4, n+1):
+    w4[i] = w4[i-1] + h/24 *(55*f(t[i-1], w4[i-1])- 59*f(t[i-2], w4[i-2])+37*f(t[i-3], w[i-3])- 9*f(t[i-4], w[i-4]))
+  return w4
+
+def AdamsBash5():
+  w5 = np.zeros(n+1)
+  w5[0] = w[0]
+  w5[1] = w[1]
+  w5[2] = w[2]
+  w5[3] = w[3]
+  w5[4] = w[4]
+  for i in range(5, n+1):
+    w5[i] =  w5[i-1] + h/720*(1901*f(t[i-1], w5[i-1])-2774*f(t[i-2], w5[i-2])+2616*f(t[i-3], w5[i-3])- 1274*f(t[i-4], w5[i-4])+
+                              251*f(t[i-5], w5[i-5]))
+  return w5
